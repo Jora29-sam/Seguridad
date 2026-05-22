@@ -30,6 +30,8 @@ jobs:
       - name: Prepare Laravel environment
         run: |
           cp .env.example .env
+          mkdir -p database
+          touch database/database.sqlite
           php artisan key:generate
           php artisan config:clear
           php artisan cache:clear
