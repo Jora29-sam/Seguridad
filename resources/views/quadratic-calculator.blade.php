@@ -6,7 +6,6 @@
     <title>Calculadora Matemática</title>
 
     <style>
-
         *{
             margin:0;
             padding:0;
@@ -89,6 +88,21 @@
             line-height:1.6;
         }
 
+        input{
+            width:100%;
+            padding:12px;
+            margin-bottom:12px;
+            border:none;
+            border-radius:10px;
+            background:#334155;
+            color:white;
+            font-size:15px;
+        }
+
+        input::placeholder{
+            color:#94a3b8;
+        }
+
         button{
             width:100%;
             border:none;
@@ -115,6 +129,25 @@
             cursor:not-allowed;
         }
 
+        .result{
+            margin-top:20px;
+            background:#0f172a;
+            padding:15px;
+            border-radius:12px;
+            color:#f8fafc;
+            border:1px solid #334155;
+        }
+
+        .result p{
+            margin-bottom:8px;
+            color:#f8fafc;
+        }
+
+        .error{
+            border:1px solid #ef4444;
+            color:#fecaca;
+        }
+
         .footer{
             text-align:center;
             margin-top:60px;
@@ -122,15 +155,11 @@
         }
 
         @media(max-width:768px){
-
             .title h1{
                 font-size:36px;
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
@@ -155,106 +184,74 @@
                 y la fórmula general.
             </p>
 
-            <button class="available">
-                Disponible próximamente
-            </button>
+            <form method="POST" action="/calculate">
+                @csrf
+
+                <input type="number" step="any" name="a" placeholder="Valor de a" required>
+                <input type="number" step="any" name="b" placeholder="Valor de b" required>
+                <input type="number" step="any" name="c" placeholder="Valor de c" required>
+
+                <button class="available" type="submit">
+                    Calcular
+                </button>
+            </form>
+
+            @if(session('x1') !== null)
+                <div class="result">
+                    <p><strong>Resultado:</strong></p>
+                    <p>X1 = {{ session('x1') }}</p>
+                    <p>X2 = {{ session('x2') }}</p>
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="result error">
+                    <p>{{ session('error') }}</p>
+                </div>
+            @endif
 
         </div>
 
         <div class="card">
-
             <div class="icon">+</div>
-
             <h2>Suma</h2>
-
-            <p>
-                Operación pendiente para el integrante asignado.
-            </p>
-
-            <button class="disabled">
-                Próximamente
-            </button>
-
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
 
         <div class="card">
-
             <div class="icon">−</div>
-
             <h2>Resta</h2>
-
-            <p>
-                Operación pendiente para el integrante asignado.
-            </p>
-
-            <button class="disabled">
-                Próximamente
-            </button>
-
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
 
         <div class="card">
-
             <div class="icon">×</div>
-
             <h2>Multiplicación</h2>
-
-            <p>
-                Operación pendiente para el integrante asignado.
-            </p>
-
-            <button class="disabled">
-                Próximamente
-            </button>
-
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
 
         <div class="card">
-
             <div class="icon">÷</div>
-
             <h2>División</h2>
-
-            <p>
-                Operación pendiente para el integrante asignado.
-            </p>
-
-            <button class="disabled">
-                Próximamente
-            </button>
-
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
 
         <div class="card">
-
             <div class="icon">△</div>
-
             <h2>Área triángulo</h2>
-
-            <p>
-                Operación pendiente para el integrante asignado.
-            </p>
-
-            <button class="disabled">
-                Próximamente
-            </button>
-
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
 
         <div class="card">
-
             <div class="icon">°</div>
-
             <h2>Celsius a Fahrenheit</h2>
-
-            <p>
-                Operación pendiente para el integrante asignado.
-            </p>
-
-            <button class="disabled">
-                Próximamente
-            </button>
-
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
 
     </div>
