@@ -12,4 +12,9 @@ class MultiplicationController extends Controller
 
         return back()->with('result', $result);
     }
+
+    public function multiplication($a, $b)
+    {
+        return $a * $b;
+    }
 }
