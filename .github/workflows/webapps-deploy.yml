@@ -65,6 +65,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'PruebaSeg1'
+          app-name: 'ClassSeg'
           slot-name: 'Production'
           package: .
