@@ -1,0 +1,26 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: UsePhpVersion@0
+    inputs:
+      versionSpec: '8.2'
+      addToPath: true
+
+  - script: composer install --no-interaction --prefer-dist
+    displayName: 'Install dependencies'
+
+  - script: cp .env.example .env
+    displayName: 'Create .env'
+
+  - script: php artisan key:generate
+    displayName: 'Generate APP_KEY'
+
+  - script: php artisan test
+    displayName: 'Run tests'
+
+  - script: ./vendor/bin/phpstan analyse
+    displayName: 'Run PHPStan'
