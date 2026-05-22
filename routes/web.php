@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MultiplicationController;
 use App\Http\Controllers\QuadraticController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('quadratic-calculator');
