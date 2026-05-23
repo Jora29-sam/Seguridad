@@ -215,11 +215,33 @@
             @endif
         </div>
 
+        <!-- discount -->
         <div class="card">
-            <div class="icon">+</div>
-            <h2>Suma</h2>
-            <p>Operación pendiente para el integrante asignado.</p>
-            <button class="disabled">Próximamente</button>
+            <div class="icon">%</div>
+            <h2>Descuento</h2>
+
+            <p>
+                Aplicar descuento a un precio
+            </p>
+
+            <form action="/discount" method="POST">
+                @csrf
+
+                <input type="number" step="0.01" name="price" placeholder="Precio" required>
+
+                <input type="number" step="0.01" name="discount" placeholder="Descuento %" required>
+
+                <button class="available" type="submit">
+                    Calcular
+                </button>
+            </form>
+
+            @if(session('discount_result') !== null)
+                <div class="result">
+                    <p><strong>Resultado:</strong></p>
+                    <p>{{ session('discount_result') }}</p>
+                </div>
+            @endif
         </div>
 
         <div class="card">
