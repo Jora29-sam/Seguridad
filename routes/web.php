@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\CelsiusController;
+use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\MultiplicationController;
 use App\Http\Controllers\OperationsController;
 use App\Http\Controllers\QuadraticController;
 use App\Http\Controllers\RestaController;
-use App\Http\Controllers\DivisionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
 class DivisionController extends Controller
@@ -21,7 +22,7 @@ class DivisionController extends Controller
     {
         // Evitar división entre 0
         if ($b == 0) {
-            return "Error: no se puede dividir entre 0";
+            return 'Error: no se puede dividir entre 0';
         }
 
         return $a / $b;
