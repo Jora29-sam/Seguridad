@@ -9,7 +9,7 @@ class CelsiusControllerTest extends TestCase
 {
     public function test_celsius_result(): void
     {
-        $controller = new CelsiusController();
+        $controller = new CelsiusController;
 
         $result = $controller->celsiusToFahrenheit(10);
 

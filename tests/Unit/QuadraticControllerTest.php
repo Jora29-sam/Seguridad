@@ -10,7 +10,7 @@ class QuadraticControllerTest extends TestCase
 {
     public function test_quadratic_calculation(): void
     {
-        $controller = new QuadraticController();
+        $controller = new QuadraticController;
 
         $request = Request::create('/calculate', 'POST', [
             'a' => 1,
