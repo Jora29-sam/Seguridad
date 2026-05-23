@@ -223,11 +223,33 @@
         </div>
 
         <div class="card">
-            <div class="icon">−</div>
-            <h2>Resta</h2>
-            <p>Operación pendiente para el integrante asignado.</p>
-            <button class="disabled">Próximamente</button>
+    <div class="icon">−</div>
+
+    <h2>Resta</h2>
+
+    <p>
+        Realizar restas entre dos números.
+    </p>
+
+    <form method="POST" action="/subtract">
+        @csrf
+
+        <input type="number" step="any" name="numero1" placeholder="Número 1" required>
+
+        <input type="number" step="any" name="numero2" placeholder="Número 2" required>
+
+        <button class="available" type="submit">
+            Calcular
+        </button>
+    </form>
+
+    @if(session('resultado') !== null)
+        <div class="result">
+            <p><strong>Resultado:</strong></p>
+            <p>{{ session('resultado') }}</p>
         </div>
+    @endif
+</div>
 
         <div class="card active">
             <div class="icon">×</div>
