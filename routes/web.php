@@ -5,6 +5,7 @@ use App\Http\Controllers\MultiplicationController;
 use App\Http\Controllers\OperationsController;
 use App\Http\Controllers\QuadraticController;
 use App\Http\Controllers\RestaController;
+use App\Http\Controllers\DivisionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +19,8 @@ Route::post('/calculate', [QuadraticController::class, 'calculate']);
 Route::post('/celsius-convert', [CelsiusController::class, 'convert']);
 
 Route::post('/subtract', [RestaController::class, 'subtract']);
+
+Route::post('/divide', [DivisionController::class, 'divide']);
 
 Route::get('/triangle-area', function () {
 

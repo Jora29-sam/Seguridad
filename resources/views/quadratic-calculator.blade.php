@@ -279,11 +279,32 @@
             @endif
         </div>
 
-        <div class="card">
-            <div class="icon">÷</div>
-            <h2>División</h2>
-            <p>Operación pendiente para el integrante asignado.</p>
-            <button class="disabled">Próximamente</button>
+         <div class="card active">
+            <div class="icon">/</div>
+
+            <h2>Division</h2>
+
+            <p>
+                Realizar divisiones entre dos números.
+            </p>
+
+            <form method="POST" action="/divide">
+                @csrf
+
+                <input type="number" step="any" name="num1" placeholder="Número 1" required>
+                <input type="number" step="any" name="num2" placeholder="Número 2" required>
+
+                <button class="available" type="submit">
+                    Calcular
+                </button>
+            </form>
+
+            @if(session('result') !== null)
+                <div class="result">
+                    <p><strong>Resultado:</strong></p>
+                    <p>{{ session('result') }}</p>
+                </div>
+            @endif
         </div>
 
         <div class="card">
