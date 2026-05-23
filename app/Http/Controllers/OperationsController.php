@@ -8,4 +8,9 @@ class OperationsController extends Controller
     {
         return $a + $b;
     }
+
+    public function triangleArea(float $base, float $height): float
+    {
+        return ($base * $height) / 2;
+    }
 }
