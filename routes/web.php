@@ -10,4 +10,4 @@ Route::get('/', function () {
 
 Route::post('/multiply', [MultiplicationController::class, 'multiply']);
 
-Route::post('/calculate', [QuadraticController::class, 'calculate']);
+
