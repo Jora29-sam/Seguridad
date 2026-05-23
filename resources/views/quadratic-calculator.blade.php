@@ -188,6 +188,53 @@
         </div>
 
         <div class="card">
+        <div class="card active">
+
+            <div class="icon">ƒ</div>
+
+            <h2>Fórmula cuadrática</h2>
+
+            <p>
+                Resolver ecuaciones cuadráticas utilizando el discriminante
+                y la fórmula general.
+            </p>
+
+            <form method="POST" action="/calculate">
+                @csrf
+
+                <input type="number" step="any" name="a" placeholder="Valor de a" required>
+                <input type="number" step="any" name="b" placeholder="Valor de b" required>
+                <input type="number" step="any" name="c" placeholder="Valor de c" required>
+
+                <button class="available" type="submit">
+                    Calcular
+                </button>
+            </form>
+
+            @if(session('x1') !== null)
+                <div class="result">
+                    <p><strong>Resultado:</strong></p>
+                    <p>X1 = {{ session('x1') }}</p>
+                    <p>X2 = {{ session('x2') }}</p>
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="result error">
+                    <p>{{ session('error') }}</p>
+                </div>
+            @endif
+
+        </div>
+
+        <div class="card">
+            <div class="icon">+</div>
+            <h2>Suma</h2>
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
+        </div>
+
+        <div class="card">
             <div class="icon">−</div>
             <h2>Resta</h2>
             <p>Operación pendiente para el integrante asignado.</p>
@@ -220,6 +267,12 @@
         <div class="result">
             <p><strong>Resultado:</strong></p>
             <p>{{ session('result') }}</p>
+
+        <div class="card">
+            <div class="icon">×</div>
+            <h2>Multiplicación</h2>
+            <p>Operación pendiente para el integrante asignado.</p>
+            <button class="disabled">Próximamente</button>
         </div>
     @endif
 
@@ -232,11 +285,23 @@
             <button class="disabled">Próximamente</button>
         </div>
 
+        
         <div class="card">
             <div class="icon">△</div>
             <h2>Área triángulo</h2>
             <p>Operación pendiente para el integrante asignado.</p>
             <button class="disabled">Próximamente</button>
+
+            <p>
+                Operación pendiente para el integrante asignado.
+            </p>
+
+            <a href="/triangle-area">
+                <button class="available">
+                    Abrir operación
+                </button>
+            </a>
+
         </div>
 
         <div class="card">
