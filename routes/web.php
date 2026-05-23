@@ -19,7 +19,7 @@ Route::get('/triangle-area', function () {
 
     if (request()->has('base') && request()->has('height')) {
 
-        $controller = new OperationsController();
+        $controller = new OperationsController;
 
         $result = $controller->triangleArea(
             (float) request('base'),
