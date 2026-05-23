@@ -245,6 +245,17 @@
             <h2>Área triángulo</h2>
             <p>Operación pendiente para el integrante asignado.</p>
             <button class="disabled">Próximamente</button>
+
+            <p>
+                Operación pendiente para el integrante asignado.
+            </p>
+
+            <a href="/triangle-area">
+                <button class="available">
+                    Abrir operación
+                </button>
+            </a>
+
         </div>
 
         <div class="card">
