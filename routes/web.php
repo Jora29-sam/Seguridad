@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OperationsController;
 use App\Http\Controllers\QuadraticController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,3 +9,20 @@ Route::get('/', function () {
 });
 
 Route::post('/calculate', [QuadraticController::class, 'calculate']);
+
+Route::get('/triangle-area', function () {
+
+    $result = null;
+
+    if (request()->has('base') && request()->has('height')) {
+
+        $controller = new OperationsController();
+
+        $result = $controller->triangleArea(
+            (float) request('base'),
+            (float) request('height')
+        );
+    }
+
+    return view('triangle-area', compact('result'));
+});

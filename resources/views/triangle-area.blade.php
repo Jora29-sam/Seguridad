@@ -50,6 +50,26 @@
             font-size:16px;
             font-weight:bold;
             cursor:pointer;
+            margin-bottom:15px;
+        }
+
+        .back-btn{
+            display:block;
+            width:100%;
+            text-align:center;
+            padding:14px;
+            border-radius:10px;
+            background:#334155;
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:bold;
+            box-sizing:border-box;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            background:#475569;
         }
 
         .result{
@@ -79,6 +99,10 @@
         </button>
 
     </form>
+
+    <a href="/" class="back-btn">
+        ← Regresar
+    </a>
 
     @isset($result)
         <div class="result">

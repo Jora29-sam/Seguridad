@@ -240,11 +240,12 @@
             <button class="disabled">Próximamente</button>
         </div>
 
+        
         <div class="card">
+
             <div class="icon">△</div>
+
             <h2>Área triángulo</h2>
-            <p>Operación pendiente para el integrante asignado.</p>
-            <button class="disabled">Próximamente</button>
 
             <p>
                 Operación pendiente para el integrante asignado.
