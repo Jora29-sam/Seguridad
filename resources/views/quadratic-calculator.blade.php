@@ -280,12 +280,39 @@
             </a>
         </div>
 
-        <div class="card">
-            <div class="icon">°</div>
-            <h2>Celsius a Fahrenheit</h2>
-            <p>Operación pendiente para el integrante asignado.</p>
-            <button class="disabled">Próximamente</button>
+        <div class="card active">
+    <div class="icon">°</div>
+
+    <h2>Celsius a Fahrenheit</h2>
+
+    <p>
+        Convertir grados Celsius a Fahrenheit utilizando
+        la fórmula (°C × 9/5) + 32.
+    </p>
+
+    <form method="POST" action="/celsius-convert">
+        @csrf
+
+        <input
+            type="number"
+            step="any"
+            name="celsius"
+            placeholder="Grados Celsius"
+            required
+        >
+
+        <button class="available" type="submit">
+            Convertir
+        </button>
+    </form>
+
+    @if(session('celsius') !== null)
+        <div class="result">
+            <p><strong>Resultado:</strong></p>
+            <p>{{ session('celsius') }} °F</p>
         </div>
+    @endif
+</div>
 
     </div>
 

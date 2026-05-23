@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CelsiusController;
 use App\Http\Controllers\MultiplicationController;
 use App\Http\Controllers\OperationsController;
 use App\Http\Controllers\QuadraticController;
@@ -12,6 +13,8 @@ Route::get('/', function () {
 Route::post('/multiply', [MultiplicationController::class, 'multiply']);
 
 Route::post('/calculate', [QuadraticController::class, 'calculate']);
+
+Route::post('/celsius-convert', [CelsiusController::class, 'convert']);
 
 Route::get('/triangle-area', function () {
 
