@@ -31,5 +31,6 @@ class QuadraticController extends Controller
             'x1' => round($x1, 4),
             'x2' => round($x2, 4),
         ]);
+
     }
 }
