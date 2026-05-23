@@ -7,18 +7,14 @@ use PHPUnit\Framework\TestCase;
 
 class DivisionTest extends TestCase
 {
-    public function test_multiplication_result(): void
+    public function test_division_result(): void
     {
         $controller = new DivisionController;
 
-        $result = $controller->division(5, 4);
+        $result = $controller->division(10, 2);
 
-        $this->assertIsInt($result);
-
-        $this->assertNotNull($result);
-
-        $this->assertEquals(20, $result);
-
+        $this->assertEquals(5, $result);
+        $this->assertIsNumeric($result);
         $this->assertGreaterThan(0, $result);
     }
 }
