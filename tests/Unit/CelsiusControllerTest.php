@@ -15,9 +15,6 @@ class CelsiusControllerTest extends TestCase
 
         $this->assertEquals(50, $result);
 
-
-
-        
         $this->assertIsNumeric($result);
 
         $this->assertGreaterThan(0, $result);
