@@ -13,7 +13,7 @@ class QuadraticControllerTest extends TestCase
         $controller = new QuadraticController;
 
         $request = Request::create('/calculate', 'POST', [
-            'a' => 0,
+            'a' => 1,
             'b' => -5,
             'c' => 6,
         ]);
