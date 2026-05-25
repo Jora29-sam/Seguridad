@@ -13,8 +13,11 @@ class CelsiusControllerTest extends TestCase
 
         $result = $controller->celsiusToFahrenheit(10);
 
-        $this->assertEquals(10, $result);
+        $this->assertEquals(50, $result);
 
+
+
+        
         $this->assertIsNumeric($result);
 
         $this->assertGreaterThan(0, $result);
